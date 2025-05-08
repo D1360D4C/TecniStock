@@ -12,12 +12,68 @@ main{
 }
 
 .formularios{
-    width: 200px;
-    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    flex-direction: row;
+    background-color: #670D2F;
     border-radius: 8px;
+    padding: 18px;
+}
+
+.formularios form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: #670D2F;
+    border-radius: 8px;
+    padding: 18px;
+}
+
+
+.formularios .btn-form{
+    cursor: pointer;
+    margin: 4px;
     padding: 8px;
+    background-color: #670D2F;
+    border-radius: 6px;
+    border: 1px solid rgb(255, 255, 255, .5);
+    color: whitesmoke;
+    transition: .3s;
+}
+
+
+.formularios .btn-form:hover{
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+
+.oculto .btn-form2{
+    cursor: pointer;
+    margin: 4px;
+    padding: 8px;
+    background-color: #670D2F;
+    border-radius: 6px;
+    border: 1px solid rgb(255, 255, 255, .5);
+    color: whitesmoke;
+    transition: .3s;
+}
+
+
+.oculto .btn-form2:hover{
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+.formularios input{
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.formularios .oculto{
+    background-color: #A53860;
 }
