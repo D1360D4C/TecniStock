@@ -8,7 +8,7 @@
 <body>
 
 <?php
-//session_start();
+session_start();
 
 include_once 'cn.php';
 
@@ -21,7 +21,7 @@ function selec($cdb){
         sesionar($cdb);
     }
 }
-
+//-----------------------------------------------------------
 function agregar($cdb){
     $nombre = $_POST['nom1'];
     $apellido = $_POST['ape1'];
@@ -34,39 +34,36 @@ function agregar($cdb){
     mysqli_close($cdb);
     echo "<p>Hola, $nombre. ¡Bienvenido!</p>";
 }
-
+//-------------------------------------------------------
 function sesionar($cdb){
     $email = $_POST['ema'];
     $contra = $_POST['pass'];
 
-    $consulta = "SELECT nombre FROM usuarios WHERE email = '$email' AND contra = '$contra'";
+    $consulta = "SELECT nombre,contra FROM usuarios WHERE email = ? ";
+    $stmt = $cdb->prepare($consulta);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
 
+    if ($resultado && $resultado->num_rows > 0) {
+        $fila = $resultado->fetch_assoc();
+        $passGuardado = $fila['contra'];
+        $nombre = $fila['nombre'];
+   
+        if($contra == $passGuardado) {       
+            $_SESSION['nick'] = $name;
+            header ("location: inicio.php");
+            exit(); 
+        }
+    }
 
-    //$nombreU = "SELECT nick FROM usuarios WHERE email='$email' AND contra= '$pass'";
-
-    $consulta1= mysqli_query($cdb, $consulta);
-
-    $coname= $cdb->query($consulta);
-
-    $name = $coname ? $coname->fetch_assoc()['nombre'] : null;
-
-    if(mysqli_num_rows($coname) > 0) {
-        $_SESSION['nick'] = $name;
-        header ("location: inicio.php");
-        exit();
-    }else{
-        echo '
+    mysqli_close($cdb);
+    echo '
             <script>
             alert("Usuario no encontrado, introduzca datos verificados");
             window.location = "index.html";
             </script>';
-            exit();
-    }
-
-
-
-    mysqli_query($cdb,$consulta);
-    mysqli_close($cdb);
+    exit();
     
 }
 ?>   
