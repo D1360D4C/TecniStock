@@ -40,10 +40,10 @@ function sesionar($cdb){
     $contra = $_POST['pass'];
 
     $consulta = "SELECT nombre,contra FROM usuarios WHERE email = ? ";
-    $stmt = $cdb->prepare($consulta);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
+    $stmt = $cdb->prepare($consulta); // Prepara la consulta con un "?"
+    $stmt->bind_param("s", $email); // Asocia el valor del email al "?"
+    $stmt->execute(); // Ejecuta la consulta
+    $resultado = $stmt->get_result(); // Obtiene los datos (si hay coincidencias)
 
     if ($resultado && $resultado->num_rows > 0) {
         $fila = $resultado->fetch_assoc();
