@@ -13,18 +13,18 @@
 
     <main>
         <div class="formularios">
-            <form id="form1" action="conexion.php" method="post">
+            <form id="form1" action="controller/loginRegister.php" method="post">
                 <input type="text" placeholder="Email" name="ema">
                 <input type="text" placeholder="Contraseña" name="pass">
                 <button type="submit" name="sesionar" class="btn-form">Iniciar Sesion</button>
                 <button type="button" onclick="mostrar2()" class="btn-form">Crear cuenta</button>
             </form>
 
-            <form id="form2" class="oculto" action="conexion.php" method="post">
+            <form id="form2" class="oculto" action="controller/loginRegister.php" method="post">
                 <input type="text" placeholder="Ingrese nombre" name="nom1">
                 <input type="text" placeholder="Ingrese apellido" name="ape1">
-                <input type="email" placeholder="Email" name="ema">
-                <input type="password" placeholder="Contraseña" name="pass">
+                <input type="text" placeholder="Email" name="ema">
+                <input type="text" placeholder="Contraseña" name="pass">
                 <button type="submit" name="agre" class="btn-form2">Crear cuenta</button>
                 <button type="button" onclick="mostrar2()" class="btn-form2">Cancelar</button>
             </form>
