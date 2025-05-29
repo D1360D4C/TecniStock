@@ -1,0 +1,5 @@
+#Si quieren ignorar una carpeta, escriben su nombre aquí
+#Si quieren ignorar un tipo específico de archivo, escriben un asterisco y el sufijo, por ejemplo: *.txt
+#Si NO quieren ignorar algún archivo en específico (por ejemplo, no ignorar el README.md pero ignorar los demás archivos .md), añaden
+#un signo de exclamación y el archivo (por ejemplo, !README.md)
+#ignore sólo ignora archivos que no fueron cometidos
