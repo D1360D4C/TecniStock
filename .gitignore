@@ -6,3 +6,5 @@
  
 # Con esto podremos llamar a la bd de la conexion como querramos y los cambios no se subirar al git
 controller/cn.php
+/controller/cn.php
+./controller/cn.php
