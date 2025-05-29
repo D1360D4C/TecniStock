@@ -3,3 +3,6 @@
 #Si NO quieren ignorar algún archivo en específico (por ejemplo, no ignorar el README.md pero ignorar los demás archivos .md), añaden
 #un signo de exclamación y el archivo (por ejemplo, !README.md)
 #ignore sólo ignora archivos que no fueron cometidos
+ 
+# Con esto podremos llamar a la bd de la conexion como querramos y los cambios no se subirar al git
+controller/cn.php
