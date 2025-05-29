@@ -42,7 +42,7 @@ function sesionar($cdb){
         $passGuardado = $fila['contra'];
         $nombre = $fila['nombre'];
    
-        if($contra == $passGuardado) {       
+        if($contra == $passGuardado) {
             $_SESSION['nombre'] = $nombre;
             $_SESSION['email'] = $email;
             header ("location: ../views/pages/home.php");
@@ -57,5 +57,5 @@ function sesionar($cdb){
             window.location = "index.php"; // cambiar index.html por index.php
             </script>';
     exit();
-    
 }
+?>   
