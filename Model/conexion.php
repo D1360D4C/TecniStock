@@ -51,7 +51,7 @@ function sesionar($cdb){
         $nombre = $fila['nombre'];
    
         if($contra == $passGuardado) {       
-            $_SESSION['nick'] = $name;
+            $_SESSION['nick'] = $nombre;
             header ("location: inicio.php");
             exit(); 
         }
