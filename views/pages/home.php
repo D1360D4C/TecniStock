@@ -17,9 +17,24 @@ if(isset($_SESSION["nombre"])){
     header("Location: ../../index.php");
     exit();
 }
+function cerrar() {
+    echo "¡La función ha sido llamada!";
+    session_destroy();
+    header("location:../../index.php");
+
+}
+
+// Verificar si se ha enviado el formulario
+if (isset($_POST['cerrar'])) {
+    // Llama a la función si el botón ha sido presionado
+    cerrar();
+}
 
 ?>
-
+<form action="" method="post">
+    <button type="submit" name="cerrar">Cerrar sesion</button>
+    <a href="segundo.php">segundo</a>
+</form>
 <body>
     
 </body>

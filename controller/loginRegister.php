@@ -18,8 +18,8 @@ function agregar($cdb){
     $apellido = $_POST['ape1'];
     $email = $_POST['ema'];
     $contra = $_POST['pass'];
-
-    $consulta = "INSERT INTO usuarios(nombre,apellido,email,contra) VALUES ('$nombre','$apellido', '$email','$contra')";
+    $hasheo = password_hash($contra,PASSWORD_DEFAULT);
+    $consulta = "INSERT INTO usuarios(nombre,apellido,email,contra) VALUES ('$nombre','$apellido', '$email','$hasheo')";
 
     mysqli_query($cdb,$consulta);
     mysqli_close($cdb);
@@ -42,7 +42,7 @@ function sesionar($cdb){
         $passGuardado = $fila['contra'];
         $nombre = $fila['nombre'];
    
-        if($contra == $passGuardado) {
+        if(password_verify($contra,$passGuardado)) {
             $_SESSION['nombre'] = $nombre;
             $_SESSION['email'] = $email;
             header ("location: ../views/pages/home.php");
