@@ -11,27 +11,18 @@ main{
     background-color: #f0f0f0;
 }
 
-.formularios{
-    display: flex;
+form {
+    display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    background-color: #670D2F;
-    border-radius: 8px;
-    padding: 18px;
-}
-
-.formularios form{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
-    background-color: #670D2F;
+    background-color: hsl(337, 78%, 23%);
     border-radius: 8px;
-    padding: 18px;
+    margin: 0;
+    padding: 20px;
+    width: 350px;
+    height: 400px;
 }
-
-
 .formularios .btn-form{
     cursor: pointer;
     margin: 4px;
@@ -42,14 +33,34 @@ main{
     color: whitesmoke;
     transition: .3s;
 }
-
-
 .formularios .btn-form:hover{
+    background-color: #A53860;
     filter: brightness(1.2);
     transform: scale(1.05);
 }
-
-
+.formularios form input[type="text"]:hover {
+  box-shadow: 0px 4px 18px rgba(218, 84, 140, 0.9); /* Sombra más intensa al hacer foco */
+    background-color: rgb(251, 253, 253);
+}
+form input{
+    width: 280px;
+    height: 50px;
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+    margin: 15px;
+    font-size: 18px;
+}
+/**
+.formularios form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: #670D2F;
+    border-radius: 8px;
+    padding: 18px;
+}
 .oculto .btn-form2{
     cursor: pointer;
     margin: 4px;
@@ -60,20 +71,15 @@ main{
     color: whitesmoke;
     transition: .3s;
 }
-
-
 .oculto .btn-form2:hover{
     filter: brightness(1.2);
     transform: scale(1.05);
 }
-
-.formularios input{
-    padding: 4px;
-    border: none;
-    border-radius: 4px;
-    margin: 4px;
-}
-
 .formularios .oculto{
     background-color: #A53860;
+}
+**/
+.oculto{
+    display: none;
+
 }

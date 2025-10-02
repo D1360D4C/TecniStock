@@ -20,17 +20,18 @@
                 <button type="button" onclick="mostrar2()" class="btn-form">Crear cuenta</button>
             </form>
 
-            <form id="form2" class="oculto" action="controller/loginRegister.php" method="post">
+            <form class="oculto" id="form2" action="controller/loginRegister.php" method="post">
                 <input type="text" placeholder="Ingrese nombre" name="nom1">
                 <input type="text" placeholder="Ingrese apellido" name="ape1">
                 <input type="text" placeholder="Email" name="ema">
                 <input type="text" placeholder="Contraseña" name="pass">
-                <button type="submit" name="agre" class="btn-form2">Crear cuenta</button>
-                <button type="button" onclick="mostrar2()" class="btn-form2">Cancelar</button>
+                <button type="submit" name="agre" class="btn-form">Crear cuenta</button>
+                <button type="button" onclick="mostrar2()" class="btn-form">Cancelar</button>
             </form>
         </div>
 
     </main>
+    <script src="din.js"></script>
 </body>
 
 </html>

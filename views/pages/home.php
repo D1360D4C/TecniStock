@@ -10,12 +10,22 @@
 
 session_start();
 
+
 if(isset($_SESSION["nombre"])){
     $nombre = $_SESSION["nombre"];
     echo "<h1>Hola, $nombre. ¡Bienvenido!</h1>";
 } else {
-    header("Location: ../../index.php");
-    exit();
+     echo 
+     //"<script>alert('Tenes que iniciar sesion');</script>";
+     "<script>
+            alert('Tenes que iniciar sesion');
+            setTimeout(function() {
+                window.location.href = '../../index.php';
+            }, 500);
+          </script>";
+    exit;
+    //header("Location: ../../index.php");
+  
 }
 function cerrar() {
     echo "¡La función ha sido llamada!";
